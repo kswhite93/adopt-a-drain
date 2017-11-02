@@ -21,7 +21,37 @@ You can see a running version of the application at
 
 [demo]: http://adopt-a-drain.herokuapp.com/
 
-## Installation
+
+
+## Docker (our prefered dev and test setup)
+
+
+1. To install Docker locally, pick your OS and follow steps here:
+[Docker Store](https://store.docker.com/search?offering=community&type=edition)
+1. `git clone` this repository, and `cd` to it in your shell
+1. build the adopta image locally, this will take a few min
+    ```bash
+    docker-compose build
+    ```
+1. Setup your docker based postgres database (first time):
+   ```bash
+   docker-compose run --rm web bundle exec rake db:setup
+   ```
+1. Load data (first time):
+   ```bash
+   docker-compose run --rm web bundle exec rake data:load_drains
+   ```
+   OR: don't load all that data, and load the seed data (first time):
+   ```bash
+   docker-compose run --rm web bundle exec rake db:seed
+   ```
+1. Start the web server:
+   ```bash
+   docker-compose up
+   ```
+1. Visit your website http://localhost:3000 (or the IP of your docker-machine)
+
+## Installation without Docker
 This application requires [Postgres](http://www.postgresql.org/) to be installed
 
     git clone git://github.com/sfbrigade/adopt-a-drain.git
@@ -32,30 +62,6 @@ This application requires [Postgres](http://www.postgresql.org/) to be installed
     bundle exec rake db:schema:load
 
 See the [wiki](https://github.com/sfbrigade/adopt-a-drain/wiki/Windows-Development-Environment) for a guide on how to install this application on Windows.
-
-## Docker
-
-To setup a local development environment with
-[Docker](https://docs.docker.com/engine/installation/).   
-
-```
-# Override database settings as the docker host:
-echo DB_HOST=db > .env
-echo DB_USER=postgres >> .env
-
-# Setup your docker based postgres database:
-docker-compose run --rm web bundle exec rake db:setup
-
-# Load data:
-docker-compose run --rm web bundle exec rake data:load_drains
-# OR: don't load all that data, and load the seed data:
-# docker-compose run --rm web bundle exec rake db:seed
-
-# Start the web server:
-docker-compose up
-
-# Visit your website http://localhost:3000 (or the IP of your docker-machine)
-```
 
 ## Usage
     rails server
