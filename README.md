@@ -54,7 +54,7 @@ You can see a running version of the application at
 ## Installation without Docker
 This application requires [Postgres](http://www.postgresql.org/) to be installed
 
-    git clone git://github.com/sfbrigade/adopt-a-drain.git
+    git clone git://github.com/code4hr/adopt-a-drain.git
     cd adopt-a-drain
     bundle install
 
@@ -135,9 +135,9 @@ Here are some ways *you* can contribute:
 * by reviewing patches
 * [financially][]
 
-[locales]: https://github.com/sfbrigade/adopt-a-drain/tree/master/config/locales
-[issues]: https://github.com/sfbrigade/adopt-a-drain/issues
-[financially]: https://secure.sfbrigade.org/page/contribute
+[locales]: https://github.com/code4hr/adopt-a-drain/tree/master/config/locales
+[issues]: https://github.com/code4hr/adopt-a-drain/issues
+[financially]:
 
 ## Submitting an Issue
 We use the [GitHub issue tracker][issues] to track bugs and features. Before
@@ -181,6 +181,6 @@ timely fashion. If critical issues for a particular implementation exist at the
 time of a major release, support for that Ruby version may be dropped.
 
 ## Copyright
-Copyright (c) 2015 Code for San Francisco. See [LICENSE.md](https://github.com/sfbrigade/adopt-a-drain/blob/master/LICENSE.md) for details.
+Copyright (c) 2017 Code for Hampton Roads. See [LICENSE.md](https://github.com/code4hr/adopt-a-drain/blob/master/LICENSE.md) for details.
 
-[license]: https://github.com/sfbrigade/adopt-a-drain/blob/master/LICENSE.md
+[license]: https://github.com/code4hr/adopt-a-drain/blob/master/LICENSE.md
