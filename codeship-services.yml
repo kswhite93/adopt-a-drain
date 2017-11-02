@@ -5,27 +5,9 @@ app:
   encrypted_env_file: deployment.env.encrypted
 
 dockercfg_generator:
-  build:
-    image: codeship/heroku-dockercfg-generator
-    path: ./dockercfg-generator
-    dockerfile_path: Dockerfile
+  image: codeship/heroku-dockercfg-generator
   add_docker: true
   encrypted_env_file: deployment.env.encrypted
 
 web:
   build: ./
-  links:
-    - postgres
-  environment:
-    DB_HOST: db
-    DB_USER: postgres
-    DB_PASSWORD: Iskids01!
-    DB_NAME: adopta
-  cached: true
-postgres:
-  image: postgres:9.6
-  environment:
-    POSTGRES_USER: postgres
-    POSTGRES_PASSWORD: Iskids01!
-    POSTGRES_DB: adopta
-
