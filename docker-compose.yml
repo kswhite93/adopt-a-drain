@@ -25,7 +25,9 @@ services:
             DB_USER: postgres
             DB_PASSWORD: Iskids01!
             DB_NAME: adopta
-
+            RACK_ENV: development
+            RAILS_ENV: development
+            GOOGLE_MAPS_JAVASCRIPT_API_KEY: ""
         depends_on:
             - db
         restart: on-failure

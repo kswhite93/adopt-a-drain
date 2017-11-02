@@ -11,5 +11,11 @@ EXPOSE 3000
 
 COPY . .
 
+ENV GOOGLE_MAPS_JAVASCRIPT_API_KEY="" \
+    RAILS_ENV=production \
+    RACK_ENV=production \
+    RAILS_SERVE_STATIC_FILES=true \
+    DATABASE_URL=""
+
 CMD [ "bundle", "exec", "rails", "server", "-p", "3000", "-b", "0.0.0.0" ]
 
