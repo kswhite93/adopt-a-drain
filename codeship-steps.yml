@@ -3,11 +3,9 @@
   - name: rubocop
     service: web
     command: rubocop
-- name: deploy
-  tag: production
-  service: codeship_heroku_deployment
-  command: codeship_heroku deploy /deploy norfolkdrains
-- name: migrate
-  tag: production
-  service: codeship_heroku_deployment
-  command: heroku run --app norfolkdrains -- bundle exec rake db:migrate
+- name: Push
+  service: app
+  type: push
+  image_name: registry.heroku.com/norfolkdrains/web
+  registry: registry.heroku.com
+  dockercfg_service: dockercfg_generator
