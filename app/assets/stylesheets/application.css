@@ -260,6 +260,6 @@ a.guidelines {
 
   #legend {
     right: auto;
-    min-width: 594px;
+    /*min-width: 594px;*/
   }
 }
