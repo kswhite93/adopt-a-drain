@@ -39,7 +39,7 @@ You can see a running version of the application at
    ```
 1. Load data (first time):
    ```bash
-   docker-compose run --rm web bundle exec rake data:load_drains
+   docker-compose run --rm web bundle exec rake data:load_things
    ```
    OR: don't load all that data, and load the seed data (first time):
    ```bash
