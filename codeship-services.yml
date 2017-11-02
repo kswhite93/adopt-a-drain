@@ -1,0 +1,21 @@
+web:
+  build: ./
+  links:
+    - postgres
+  environment:
+    DB_HOST: db
+    DB_USER: postgres
+    DB_PASSWORD: Iskids01!
+    DB_NAME: adopta
+  cached: true
+postgres:
+  image: postgres:9.6
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: Iskids01!
+    POSTGRES_DB: adopta
+codeship_heroku_deployment:
+  image: codeship/heroku-deployment
+  encrypted_env_file: deployment.env.encrypted
+  volumes:
+    - ./:/deploy

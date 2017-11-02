@@ -21,7 +21,14 @@
 /log/*
 !/log/.keep
 /tmp
-.env
+!/tmp/.keep
 
 # docker stuff
 *override*
+
+# Ignore Byebug command history file.
+.byebug_history
+
+.env
+*.env
+codeship.aes
