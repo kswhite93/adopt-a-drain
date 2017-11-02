@@ -21,5 +21,14 @@
 /log/*
 !/log/.keep
 /tmp
+!/tmp/.keep
+
+# docker stuff
+*override*
+
+# Ignore Byebug command history file.
+.byebug_history
+
 .env
+
 .DS_Store
