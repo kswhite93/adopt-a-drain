@@ -17,5 +17,5 @@ ENV GOOGLE_MAPS_JAVASCRIPT_API_KEY="" \
     RAILS_SERVE_STATIC_FILES=true \
     PORT=3000
 
-CMD [ "bundle", "exec", "rails", "server", "-p", "$PORT", "-b", "0.0.0.0" ]
+CMD [ "bundle", "exec", "rails", "server", "-p", "'$PORT'", "-b", "0.0.0.0" ]
 
