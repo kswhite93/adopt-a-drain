@@ -35,7 +35,7 @@ You can see a running version of the application at
     ```
 1. Setup your docker based postgres database (first time):
    ```bash
-   docker-compose run --rm web bundle exec rake db:setup
+   docker-compose run --rm web bundle exec rake db:schema:load
    ```
 1. Load data (first time):
    ```bash
