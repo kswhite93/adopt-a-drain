@@ -28,6 +28,7 @@ services:
             RACK_ENV: development
             RAILS_ENV: development
             PORT: "3000"
+            ASSET_URL: http://localhost:3000
         depends_on:
             - db
         restart: on-failure
