@@ -11,11 +11,11 @@ EXPOSE 3000
 
 COPY . .
 
-ENV GOOGLE_MAPS_JAVASCRIPT_API_KEY="" \
-    RAILS_ENV=production \
+ENV RAILS_ENV=production \
     RACK_ENV=production \
-    RAILS_SERVE_STATIC_FILES=true \
     PORT=3000
 
-CMD bundle exec rails server -p $PORT -b 0.0.0.0
+RUN rake assets:precompile
+
+CMD bundle exec puma -b tcp://0.0.0.0:$PORT
 
