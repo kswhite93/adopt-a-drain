@@ -83,7 +83,7 @@ h5.my-things {
 }
 
 .navbar img {
-  max-width: 130px;
+  max-width: 80%;
   margin: 5px;
 }
 
@@ -250,7 +250,7 @@ a.guidelines {
   }
 
   .navbar img {
-    max-width: 60%;
+    max-width: 100%;
     margin: 5px;
   }
 
