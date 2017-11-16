@@ -22,9 +22,7 @@ You can see a running version of the application at
 [demo]: http://adopt-a-drain.herokuapp.com/
 
 
-
 ## Docker (our prefered dev and test setup)
-
 
 1. To install Docker locally, pick your OS and follow steps here:
 [Docker Store](https://store.docker.com/search?offering=community&type=edition)
@@ -41,78 +39,26 @@ You can see a running version of the application at
    ```bash
    docker-compose run --rm web bundle exec rake data:load_things
    ```
-   OR: don't load all that data, and load the seed data (first time):
-   ```bash
-   docker-compose run --rm web bundle exec rake db:seed
-   ```
 1. Start the web server:
    ```bash
    docker-compose up
    ```
-1. Visit your website http://localhost:3000 (or the IP of your docker-machine)
+      ProTip: use `docker-compose up -d` to run these containers in the background
 
-## Installation without Docker
-This application requires [Postgres](http://www.postgresql.org/) to be installed
+1. Visit your website http://localhost:3000 (or the IP of your docker-machine if on Win7/8/10Home)
+
+## Installation without Docker (No recommended unless you're already a Ruby developer that doesn't want Docker)
+
+This application requires [Postgres](http://www.postgresql.org/) and Ruby to be installed
 
     git clone git://github.com/code4hr/adopt-a-drain.git
     cd adopt-a-drain
     bundle install
 
-    bundle exec rake db:create
     bundle exec rake db:schema:load
+    bundle exec rake data:load_things
 
-See the [wiki](https://github.com/sfbrigade/adopt-a-drain/wiki/Windows-Development-Environment) for a guide on how to install this application on Windows.
-
-## Usage
     rails server
-
-## Seed Data
-    bundle exec rake data:load_drains
-
-## Deploying to Heroku
-A successful deployment to Heroku requires a few setup steps:
-
-1. Generate a new secret token:
-
-    ```
-    rake secret
-    ```
-
-2. Set the token on Heroku:
-
-    ```
-    heroku config:set SECRET_TOKEN=the_token_you_generated
-    ```
-
-3. [Precompile your assets](https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
-
-    ```
-    RAILS_ENV=production bundle exec rake assets:precompile
-
-    git add public/assets
-
-    git commit -m "vendor compiled assets"
-    ```
-
-4. Add a production database to config/database.yml
-
-5. Seed the production db:
-
-    `heroku run bundle exec rake db:seed`
-
-Keep in mind that the Heroku free Postgres plan only allows up to 10,000 rows,
-so if your city has more than 10,000 fire drains (or other thing to be
-adopted), you will need to upgrade to the $9/month plan.
-
-### Google Analytics
-If you have a Google Analytics account you want to use to track visits to your
-deployment of this app, just set your ID and your domain name as environment
-variables:
-
-    heroku config:set GOOGLE_ANALYTICS_ID=your_id
-    heroku config:set GOOGLE_ANALYTICS_DOMAIN=your_domain_name
-
-An example ID is `UA-12345678-9`, and an example domain is `adoptadrain.org`.
 
 ## Contributing
 In the spirit of [free software][free-sw], **everyone** is encouraged to help
@@ -133,11 +79,9 @@ Here are some ways *you* can contribute:
 * by refactoring code
 * by closing [issues][]
 * by reviewing patches
-* [financially][]
 
 [locales]: https://github.com/code4hr/adopt-a-drain/tree/master/config/locales
 [issues]: https://github.com/code4hr/adopt-a-drain/issues
-[financially]:
 
 ## Submitting an Issue
 We use the [GitHub issue tracker][issues] to track bugs and features. Before
@@ -164,21 +108,6 @@ Ideally, a bug report should include a pull request with failing specs.
 [fork]: http://help.github.com/fork-a-repo/
 [branch]: https://guides.github.com/introduction/flow/
 [pr]: http://help.github.com/send-pull-requests/
-
-## Supported Ruby Version
-This library aims to support and is [tested against][travis] Ruby version 2.2.2.
-
-If something doesn't work on this version, it should be considered a bug.
-
-This library may inadvertently work (or seem to work) on other Ruby
-implementations, however support will only be provided for the version above.
-
-If you would like this library to support another Ruby version, you may
-volunteer to be a maintainer. Being a maintainer entails making sure all tests
-run and pass on that implementation. When something breaks on your
-implementation, you will be personally responsible for providing patches in a
-timely fashion. If critical issues for a particular implementation exist at the
-time of a major release, support for that Ruby version may be dropped.
 
 ## Copyright
 Copyright (c) 2017 Code for Hampton Roads. See [LICENSE.md](https://github.com/code4hr/adopt-a-drain/blob/master/LICENSE.md) for details.
