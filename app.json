@@ -1,6 +1,6 @@
 {
   "name": "adopt-a-drain",
-  "description": "Adopt-a-Drain Norfolk Review App",
+  "description": "Adopt-a-Drain City of Norfolk App",
   "scripts": {
     "postdeploy": "bundle exec rake db:schema:load db:seed"
   },

@@ -48,7 +48,7 @@ class Thing < ActiveRecord::Base
   # Currently hardcoding since we only have one special case, but we should
   # move this into the database if we add an additional
   def detail_link
-    return 'http://sfwater.org/index.aspx?page=399' if system_use_code == 'MS4'
+    return '' if system_use_code == 'MS4'
 
     nil
   end
