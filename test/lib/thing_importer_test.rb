@@ -6,7 +6,7 @@ class ThingImporterTest < ActiveSupport::TestCase
   test 'import does not modify data if endpoint fails' do
     thing1 = things(:thing_1)
 
-    fake_url = 'http://sf-drain-data.org'
+    fake_url = 'http://norfolk-drain-data.org'
     stub_request(:get, fake_url).to_return(status: [500, 'Internal Server Error'], body: nil)
     assert_raises OpenURI::HTTPError do
       ThingImporter.load(fake_url)
@@ -28,7 +28,7 @@ class ThingImporterTest < ActiveSupport::TestCase
     deleted_thing = things(:thing_3)
     deleted_thing.destroy!
 
-    fake_url = 'http://sf-drain-data.org'
+    fake_url = 'http://norfolk-drain-data.org'
     fake_response = [
       'PUC_Maximo_Asset_ID,Drain_Type,System_Use_Code,Location',
       'N-3,Catch Basin Drain,ABC,"(42.38, -71.07)"',
