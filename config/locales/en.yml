@@ -102,7 +102,7 @@ en:
     sign_in: "Sign in to adopt this %{thing}"
     thank_you: "Thank you for adopting this %{thing}!"
     email_text: "I just adopted one of Norfolk's 25,000+ storm drains and pledged to help keep it clear of leaves and debris. You, too, can Adopt a Drain and help the City avoid flooding at %{root_url}."
-    tweet_text: "Flooded streets aren't fun. I adopted my own Norfolk storm drain at %{root_url}. Claim and name yours #nfksewer @sfwater"
+    tweet_text: "Flooded streets aren't fun. I adopted my own Norfolk storm drain at %{root_url}. Claim and name yours #NFKDrains #DrainHero #AdoptADrain @NorfolkVA"
     tos: "Terms of Service"
     waiver: "Volunteer Waiver"
   site:
