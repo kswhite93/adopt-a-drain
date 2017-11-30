@@ -3,7 +3,7 @@ app:
     image: registry.heroku.com/norfolkdrains/web
     dockerfile: Dockerfile
   cached: true
-  default_cache_branch: "production"
+  default_cache_branch: "master"
   encrypted_env_file: deployment.env.encrypted
 
 dockercfg_generator:
