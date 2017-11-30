@@ -5,8 +5,15 @@
     command: rubocop
 - name: Push
   service: app
-  tag: production
+  tag: master
   type: push
   image_name: registry.heroku.com/norfolkdrains/web
+  registry: registry.heroku.com
+  dockercfg_service: dockercfg_generator
+- name: Pushdevelop
+  service: app
+  tag: develop
+  type: push
+  image_name: registry.heroku.com/norfolkdrains-develop/web
   registry: registry.heroku.com
   dockercfg_service: dockercfg_generator
