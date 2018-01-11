@@ -635,7 +635,7 @@ $(function() {
         console.error('error:', jqXHR);
       },
       success: function(data) {
-        console.log('called back')
+        alert('Your Checkin has been recorded.')
         $.ajax({
           type: 'GET',
           url: '/info_window',

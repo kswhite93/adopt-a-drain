@@ -3,7 +3,7 @@ class CheckinsController < ApplicationController
   def create
     @checkin = Checkin.create! do |c|
       c.thing = thing
-      c.user = @current_user
+      c.user = current_user
     end
     render json: @checkin
   end
