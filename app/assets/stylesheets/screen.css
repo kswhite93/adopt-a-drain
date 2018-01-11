@@ -165,6 +165,9 @@ form input.search-query {
 
 #splash .modal-content{
   background-color: #009add;
+  color: #ffffff !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
 }
 
 #tos {
