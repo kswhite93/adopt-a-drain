@@ -61,9 +61,11 @@
             Hide
   = render :partial => "sidebar/tos"
   = render :partial => "sidebar/guidelines"
+  = render :partial => "sidebar/getting_started"
 :javascript
   $(function() {
     $('.navbar-toggle').on('click', function(){
       $('div.sidebar').toggleClass('sidebar-full');
     });
+    $('#splash').modal({show:true});
   });

@@ -163,6 +163,10 @@ form input.search-query {
   width: 100%;
 }
 
+#splash .modal-content{
+  background-color: #009add;
+}
+
 #tos {
   text-align: left;
 }
