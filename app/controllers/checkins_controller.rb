@@ -1,15 +1,21 @@
 class CheckinsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
+
   def create
-    # render(json:current_user)
-    @checkin = Checkin.new(thing_id:params[:id])
-    @checkin.user_id = current_user.id
-    @checkin.save!
-    render(json:@checkin)
+    @checkin = Checkin.create! do |c|
+      c.thing = thing
+      c.user = @current_user
+    end
+    render json: @checkin
   end
 
   def show
-    @checkin = Checkin.take()
+    @checkin =  Checkin.order("created_at").last(25)
     render(json: @checkin)
   end
+
+  private
+  def thing
+    @thing ||= Thing.find params[:id]
+  end
+
 end
