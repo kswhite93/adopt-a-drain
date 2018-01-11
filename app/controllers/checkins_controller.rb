@@ -9,7 +9,7 @@ class CheckinsController < ApplicationController
   end
 
   def show
-    @checkin =  Checkin.order("created_at").last(25)
+    @checkin =  Checkin.order(:created_at).last(25)
     render(json: @checkin)
   end
 
