@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resource :reminders
   resource :things
+  resource :checkins
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   root to: 'main#index'
 end

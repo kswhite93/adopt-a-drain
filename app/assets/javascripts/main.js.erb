@@ -616,6 +616,44 @@ $(function() {
     });
     return false;
   });
+  
+  $('#map').on('click', '#check_in_button', function() {
+    $.ajax({
+      type: 'POST',
+      url: '/checkins.json',
+      data: {
+        '_method': 'patch',
+        'id': $('#thing_id').val(),
+        'utf8': '✓',
+        'authenticity_token': $('#abandon_form input[name="authenticity_token"]').val(),
+        'thing': {
+          'user_id': $('#thing_user_id').val(),
+          'adopted_name': $('#thing_adopted_name').val()
+        }
+      },
+      error: function(jqXHR) {
+        $(submitButton).attr("disabled", false);
+      },
+      success: function(data) {
+        console.log('called back')
+        $.ajax({
+          type: 'GET',
+          url: '/info_window',
+          data: {
+            'thing_id': activeThingId
+          },
+          success: function(data) {
+            activeInfoWindow.close();
+            activeInfoWindow.setContent(data);
+            activeInfoWindow.open(map, activeMarker);
+            activeMarker.setIcon(toSewerMarker);
+            activeMarker.setAnimation(null);
+          }
+        });
+      }
+    });
+  })
+
   $('#map').on('submit', '#abandon_form', function() {
     var answer = window.confirm(constants.abandonConfirmText)
     if(answer) {
