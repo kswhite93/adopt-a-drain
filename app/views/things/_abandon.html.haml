@@ -3,4 +3,6 @@
   = f.hidden_field "user_id", :value => ""
   = f.hidden_field "adopted_name", :value => ""
   %fieldset.form-group
+    = f.button t("buttons.check_in", :thing => t("defaults.thing")), :class => "btn btn-primary btn-block", :type => "button", :id => "check_in_button"
+  %fieldset.form-group
     = f.submit t("buttons.abandon", :thing => t("defaults.thing")), :class => "btn btn-danger btn-block"
