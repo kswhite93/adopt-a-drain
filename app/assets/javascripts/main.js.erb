@@ -620,9 +620,9 @@ $(function() {
   $('#map').on('click', '#check_in_button', function() {
     $.ajax({
       type: 'POST',
-      url: '/checkins.json',
+      url: '/checkins/',
       data: {
-        '_method': 'patch',
+        '_method': 'post',
         'id': $('#thing_id').val(),
         'utf8': '✓',
         'authenticity_token': $('#abandon_form input[name="authenticity_token"]').val(),
@@ -632,10 +632,10 @@ $(function() {
         }
       },
       error: function(jqXHR) {
-        $(submitButton).attr("disabled", false);
+        console.error('error:', jqXHR);
       },
       success: function(data) {
-        console.log('called back')
+        alert('Your Checkin has been recorded.')
         $.ajax({
           type: 'GET',
           url: '/info_window',
