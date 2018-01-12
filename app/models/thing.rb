@@ -14,7 +14,7 @@ class Thing < ActiveRecord::Base
                  :street_number, :zip
   has_many :reminders, dependent: :destroy
   has_many :checkins, dependent: :destroy
- 
+
   validates :city_id, uniqueness: true, allow_nil: true
   validates :lat, presence: true
   validates :lng, presence: true
