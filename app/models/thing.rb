@@ -13,6 +13,8 @@ class Thing < ActiveRecord::Base
                  :full_address, :state, :street_address, :street_name,
                  :street_number, :zip
   has_many :reminders, dependent: :destroy
+  has_many :checkins, dependent: :destroy
+
   validates :city_id, uniqueness: true, allow_nil: true
   validates :lat, presence: true
   validates :lng, presence: true
