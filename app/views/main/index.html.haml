@@ -43,10 +43,10 @@
             .col-xs-4
 
           .row
-            .col-xs-6
+            .col-xs-7
               %a{:href => "http://codeforhr.org/"}
                 = image_tag "logos/codeforhamptonroads.png", :alt => t("sponsors.built"), :title => t("sponsors.built"), :class => "cfhr"
-            .col-xs-6
+            .col-xs-5
               %a{:href => "http://codeforamerica.org/"}
                 = image_tag "logos/cfa.jpg", :alt => t("sponsors.cfa"), :title => t("sponsors.cfa"), :class => "cfa"
 
@@ -61,9 +61,11 @@
             Hide
   = render :partial => "sidebar/tos"
   = render :partial => "sidebar/guidelines"
+  = render :partial => "sidebar/getting_started"
 :javascript
   $(function() {
     $('.navbar-toggle').on('click', function(){
       $('div.sidebar').toggleClass('sidebar-full');
     });
+    $('#splash').modal({show:true});
   });

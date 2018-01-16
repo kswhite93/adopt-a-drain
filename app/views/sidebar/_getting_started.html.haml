@@ -1,0 +1,54 @@
+- unless signed_in?
+  .modal.fade#splash
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          %button{:class => "close", :"data-dismiss" => "modal", :href => "#", :type => "button", :"aria-label" => "Close"}
+            %span{:"aria-hidden" =>"true"}
+              &times;
+          %d.row
+            %d.col-xs-12.col-sm-3.col-md-3.col-lg-3
+              = image_tag "logos/adopt-a-drain.png", :width => "100%", :alt => t("titles.main", :thing => t("defaults.thing").titleize), :title => t("titles.main", :thing => t("defaults.thing").titleize)
+            %d.col-xs-12.col-sm-9.col-md-9.col-lg-9
+              %h1{:style => "float:left;font-size:54px;"}
+                How to adopt a drain
+        .modal-body
+          %d.row
+            %d.col-xs-12.col-sm-4.col-md-4.col-lg-4
+              %text{:style => "font-size:64px"}
+                1.
+              %h1{:style => "margin-top:-50px"}
+                Sign up
+                %br
+                  here
+              %p{:style => "padding-left:30px;"}
+                %ul{:style => "font-size:16px;"}
+                  %li
+                    Sign up with your name and email address.
+                  %li
+                    Enter your street address to search for a storm drain.
+                  %li
+                    Choose your storm drain and give it a name.
+                  %li
+                    Adopt multiple drains anywhere you live, work, and play.
+              %p{:style => "padding-left:30px;padding-top:30px;"}
+                %button.btn.btn-lg.btn-success{:type => "button", :id => "accept", :"data-dismiss" => "modal", :style => "font-size:24px;"}
+                  << Start
+            %d.col-xs-12.col-sm-4.col-md-4.col-lg-4
+              %text{:style => "font-size:64px"}
+                2.
+              %h1{:style => "margin-top:-50px"}
+                Keep your
+                %br
+                  drains clear
+              %p{:style => "padding-left:30px;font-size:16px;"}
+                Once you have adopted "your" drain, sweep and rake the leaves and other debris from the surface of the drain year-round.
+            %d.col-xs-12.col-sm-4.col-md-4.col-lg-4
+              %text{:style => "font-size:64px"}
+                3.
+              %h1{:style => "margin-top:-50px"}
+                Post a
+                %br
+                  yard sign
+              %p{:style => "padding-left:30px;font-size:16px;"}
+                We’ll mail you a small, attractive yard sign. Put it in your yard to let your neighbors know you’re protecting clean water. We’ll also send a list of things you and your neighbors can do in your own yards to keep pollution out of our lakes and rivers. If anyone asks, let them know how they can do their part!
