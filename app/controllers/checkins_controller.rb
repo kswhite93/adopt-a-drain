@@ -1,5 +1,4 @@
 class CheckinsController < ApplicationController
-
   def create
     @checkin = Checkin.create! do |c|
       c.thing = thing
@@ -18,5 +17,4 @@ private
   def thing
     @thing ||= Thing.find params[:id]
   end
-
 end
